@@ -1,87 +1,55 @@
-# Welcome to React Router!
+# Resume Analyzer
 
-A modern, production-ready template for building full-stack React applications using React Router.
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+Resume Analyzer reviews a PDF resume against a job description and returns an estimated ATS score, an overall score, and suggestions for improving the resume. The dashboard lets you reopen previous reviews or delete them individually.
 
 ## Features
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- Upload a PDF resume up to 20 MB and provide the target company, job title, and job description.
+- Get feedback on ATS compatibility, tone and style, content, structure, and skills.
+- Preview the resume, open the original PDF, and revisit or delete saved reviews.
 
-## Getting Started
+## Prerequisites
 
-### Installation
+- **Node.js 24 LTS** with npm. The project's Dockerfile also uses Node 24.
+- **Git** to clone the repository.
+- An internet connection and a **Puter account** to sign in and run analyses.
 
-Install the dependencies:
+Puter.js handles sign-in, file storage, saved reviews, and AI analysis. The app loads Puter.js in the browser and uses Claude Sonnet 4.6 for feedback. You can run the app without creating a `.env` file or entering an AI API key. Uploaded resumes and their preview images are stored in Puter, and the resume is sent to the AI service for analysis.
+
+## Run locally
 
 ```bash
+git clone https://github.com/Ameya1301/AI-Resume-Analyzer.git
+cd AI-Resume-Analyzer
 npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+Open [http://localhost:5173](http://localhost:5173). If Vite picks a different port, use the URL printed in your terminal.
 
-## Building for Production
+1. Sign in with Puter.
+2. Click **Upload Resume**, select or drop a PDF, and enter the target job details.
+3. Click **Analyze Resume**. The analysis may take a moment before the review opens.
+4. Return to the homepage to see your saved reviews. Use the **×** on a card to delete that resume and its feedback.
 
-Create a production build:
+## npm scripts
 
-```bash
-npm run build
-```
+| Command             | What it does                                              |
+| ------------------- | --------------------------------------------------------- |
+| `npm run dev`       | Starts the development server with hot reload.            |
+| `npm run typecheck` | Generates React Router route types and checks TypeScript. |
+| `npm run build`     | Creates a production build in `build/`.                   |
+| `npm start`         | Serves the production build. Run `npm run build` first.   |
 
-## Deployment
+For a clean install that uses the committed lockfile, run `npm ci` in place of `npm install`.
 
-### Docker Deployment
+## Tech stack
 
-To build and run using Docker:
+React, React Router, TypeScript, Vite, Tailwind CSS, Zustand, PDF.js, and Puter.js.
 
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+| Path               | Purpose                                       |
+| ------------------ | --------------------------------------------- |
+| `app/routes/`      | Dashboard, sign-in, upload, and review pages. |
+| `app/components/`  | Resume cards, file uploader, and feedback UI. |
+| `app/lib/puter.ts` | Puter sign-in, storage, and AI integration.   |
+| `public/`          | Icons and other static assets.                |

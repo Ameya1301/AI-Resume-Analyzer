@@ -2,6 +2,8 @@
 
 Resume Analyzer reviews a PDF resume against a job description and returns an estimated ATS score, an overall score, and suggestions for improving the resume. The dashboard lets you reopen previous reviews or delete them individually.
 
+[Try the live Resume Analyzer](https://www.ameya-warade.com/projects/resume-analyzer/)
+
 ## Features
 
 - Upload a PDF resume up to 20 MB and provide the target company, job title, and job description.

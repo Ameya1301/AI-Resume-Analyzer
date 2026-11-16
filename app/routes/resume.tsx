@@ -51,10 +51,19 @@ const Resume = () => {
   }, [id]);
 
   return (
-    <main className="min-h-screen !pt-0 bg-[url('/images/bg-main.svg')] bg-cover bg-center bg-no-repeat">
+    <main
+      className="min-h-screen !pt-0 bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `url("${import.meta.env.BASE_URL}images/bg-main.svg")`,
+      }}
+    >
       <nav className="resume-nav">
         <Link to="/" className="back-button">
-          <img src="/icons/back.svg" alt="logo" className="w-2.5 h-2.5" />
+          <img
+            src={`${import.meta.env.BASE_URL}icons/back.svg`}
+            alt=""
+            className="w-2.5 h-2.5"
+          />
           <span className="text-gray-800 text-sm font-semibold">
             Back to Homepage
           </span>
@@ -86,7 +95,10 @@ const Resume = () => {
               <Details feedback={feedback} />
             </div>
           ) : (
-            <img src="/images/resume-scan-2.gif" className="w-full" />
+            <img
+              src={`${import.meta.env.BASE_URL}images/resume-scan-2.gif`}
+              className="w-full"
+            />
           )}
         </section>
       </div>

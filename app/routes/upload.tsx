@@ -98,7 +98,12 @@ const Upload = () => {
     handleAnalyze({ companyName, jobTitle, jobDescription, file });
   };
   return (
-    <main className="bg-[url('/images/bg-main.svg')] bg-cover">
+    <main
+      className="bg-cover"
+      style={{
+        backgroundImage: `url("${import.meta.env.BASE_URL}images/bg-main.svg")`,
+      }}
+    >
       <Navbar />
       <section className="main-section">
         <div className="page-heading py-4">
@@ -106,7 +111,11 @@ const Upload = () => {
           {isProcessing ? (
             <>
               <h2>{statusText}</h2>
-              <img src="/images/resume-scan.gif" className="w-full" alt="" />
+              <img
+                src={`${import.meta.env.BASE_URL}images/resume-scan.gif`}
+                className="w-full"
+                alt=""
+              />
             </>
           ) : (
             <h2>Drop your resume for an ATS score and improvement tips </h2>

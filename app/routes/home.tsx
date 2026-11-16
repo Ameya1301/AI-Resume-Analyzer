@@ -95,7 +95,12 @@ export default function Home() {
   const isEmpty = !loadingResumes && !loadError && resumes.length === 0;
 
   return (
-    <main className="bg-[url('/images/bg-main.svg')] bg-cover">
+    <main
+      className="bg-cover"
+      style={{
+        backgroundImage: `url("${import.meta.env.BASE_URL}images/bg-main.svg")`,
+      }}
+    >
       <Navbar />
 
       <section className="main-section">
@@ -117,7 +122,7 @@ export default function Home() {
         {loadingResumes && (
           <div className="flex flex-col items-center justify-center">
             <img
-              src="/images/resume-scan-2.gif"
+              src={`${import.meta.env.BASE_URL}images/resume-scan-2.gif`}
               alt="Loading resumes"
               className="w-[200px]"
             />

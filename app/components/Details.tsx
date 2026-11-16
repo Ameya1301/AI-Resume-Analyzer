@@ -28,7 +28,7 @@ const ScoreBadge = ({ score }: { score: number }) => {
       )}
     >
       <img
-        src={isHighScore ? "/icons/check.svg" : "/icons/warning.svg"}
+        src={`${import.meta.env.BASE_URL}icons/${isHighScore ? "check.svg" : "warning.svg"}`}
         alt=""
         className="size-4 shrink-0"
       />
@@ -76,7 +76,7 @@ const CategoryContent = ({ tips }: { tips: FeedbackTip[] }) => {
               )}
             >
               <img
-                src={isGood ? "/icons/check.svg" : "/icons/warning.svg"}
+                src={`${import.meta.env.BASE_URL}icons/${isGood ? "check.svg" : "warning.svg"}`}
                 alt={isGood ? "Strength" : "Needs improvement"}
                 className="mt-0.5 size-4 shrink-0"
               />
@@ -104,7 +104,7 @@ const CategoryContent = ({ tips }: { tips: FeedbackTip[] }) => {
             >
               <div className="flex min-w-0 items-start gap-2">
                 <img
-                  src={isGood ? "/icons/check.svg" : "/icons/warning.svg"}
+                  src={`${import.meta.env.BASE_URL}icons/${isGood ? "check.svg" : "warning.svg"}`}
                   alt={isGood ? "Strength" : "Needs improvement"}
                   className="mt-0.5 size-4 shrink-0"
                 />

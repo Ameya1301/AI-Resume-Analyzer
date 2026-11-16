@@ -14,18 +14,18 @@ const ATS = ({ score, suggestions }: ATSProps) => {
   const rating =
     score > 69
       ? {
-          icon: "/icons/ats-good.svg",
+          icon: `${import.meta.env.BASE_URL}icons/ats-good.svg`,
           subtitle: "Great job!",
           badge: "bg-green-100 text-green-800",
         }
       : score > 49
         ? {
-            icon: "/icons/ats-warning.svg",
+            icon: `${import.meta.env.BASE_URL}icons/ats-warning.svg`,
             subtitle: "Good start",
             badge: "bg-amber-100 text-amber-900",
           }
         : {
-            icon: "/icons/ats-bad.svg",
+            icon: `${import.meta.env.BASE_URL}icons/ats-bad.svg`,
             subtitle: "Needs improvement",
             badge: "bg-red-100 text-red-800",
           };
@@ -74,7 +74,7 @@ const ATS = ({ score, suggestions }: ATSProps) => {
                 )}
               >
                 <img
-                  src={isGood ? "/icons/check.svg" : "/icons/warning.svg"}
+                  src={`${import.meta.env.BASE_URL}icons/${isGood ? "check.svg" : "warning.svg"}`}
                   alt={isGood ? "Strength" : "Needs improvement"}
                   className="mt-0.5 size-4 shrink-0"
                 />

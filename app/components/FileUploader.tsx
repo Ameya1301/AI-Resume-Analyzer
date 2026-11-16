@@ -37,7 +37,11 @@ const FileUploader = ({ file, onFileSelect }: FileUploaderProps) => {
                 e.stopPropagation();
               }}
             >
-              <img src="/images/pdf.png" alt="pdf" className="size-10" />
+              <img
+                src={`${import.meta.env.BASE_URL}images/pdf.png`}
+                alt="pdf"
+                className="size-10"
+              />
               <div className="flex item-center space-x-3 ">
                 <div>
                   <p className="text-sm text-gray-700 font-medium truncate max-w-xs">
@@ -55,13 +59,21 @@ const FileUploader = ({ file, onFileSelect }: FileUploaderProps) => {
                   onFileSelect?.(null);
                 }}
               >
-                <img src="/icons/cross.svg" alt="remove" className="w-4 h-4" />
+                <img
+                  src={`${import.meta.env.BASE_URL}icons/cross.svg`}
+                  alt="Remove"
+                  className="w-4 h-4"
+                />
               </button>
             </div>
           ) : (
             <div className="text-center">
               <div className="mx-auto w-16 h-16 flex items-center justify-center">
-                <img src="/icons/info.svg" alt="upload" className="size-20" />
+                <img
+                  src={`${import.meta.env.BASE_URL}icons/info.svg`}
+                  alt="upload"
+                  className="size-20"
+                />
               </div>
               <p className="text-lg text-gray-500">
                 <span className="font-semibold">Click to upload</span> or drag

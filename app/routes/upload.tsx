@@ -6,7 +6,9 @@ import { convertPdfToImage } from "~/lib/pdf2img";
 import { usePuterStore } from "~/lib/puter";
 import { generateUUID } from "~/lib/utils";
 import { prepareInstructions } from "../../constansts";
-
+export function meta() {
+  return [{ title: "Upload Resume | Resume Analyzer" }];
+}
 const Upload = () => {
   const { auth, isLoading, fs, ai, kv } = usePuterStore();
   const navigate = useNavigate();
